@@ -15,3 +15,6 @@ class TicTacToe
 end
 
 TicTacToe.new.display_tictactoe
+
+print "Choose where you want to place your mark with numbers 1-9: "
+user = gets.chomp
