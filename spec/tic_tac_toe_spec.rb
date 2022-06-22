@@ -17,4 +17,11 @@ describe TicTacToe do
 			expect(new_game.board.length).to eq 9
 		end
 	end
+	context '#display_tictactoe' do
+
+		it 'prints to terminal' do
+			expect {TicTacToe.new.display_tictactoe}.to output.to_stdout
+		end
+
+	end
 end
