@@ -12,5 +12,9 @@ describe TicTacToe do
 		it 'makes board an array' do
 			expect(new_game.board.class).to eq Array
 		end
+
+		it 'makes board with length 9' do
+			expect(new_game.board.length).to eq 9
+		end
 	end
 end
