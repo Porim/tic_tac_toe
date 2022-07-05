@@ -79,6 +79,14 @@ describe TicTacToe do
     it 'returns false for 3.5' do 
       expect(new_game.validate_input('3.5')).to be_falsey
     end
+    it 'returns false for -1' do 
+      expect(new_game.validate_input('-11')).to be_falsey
+    end
+
+    it 'returns false for 1 if 1 is already marked' do 
+      new_game.board[0] = 'X'
+      expect(new_game.validate_input('1')).to be_falsey
+    end
   end
 
   context '#display_tictactoe' do

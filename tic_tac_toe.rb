@@ -14,11 +14,13 @@ class TicTacToe
   end
 
   def display_tictactoe
+    puts ""
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts '-----------'
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts '-----------'
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+    puts ""
   end
 
   # place mark
@@ -37,7 +39,8 @@ class TicTacToe
   end
 
   def validate_input(input)
-    input.to_i > 0 && input.to_i <= 9 && input.size == 1
+    input.size == 1 && input.to_i > 0 && input.to_i <= 9 &&
+    @board[input.to_i - 1].class == Integer
   end
 
   def check_if_X_won
