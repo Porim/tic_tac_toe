@@ -50,6 +50,37 @@ describe TicTacToe do
     end
   end
 
+  context '#change_player' do 
+    it 'changes players' do 
+      new_game = TicTacToe.new
+      new_game.player = 1
+      new_game.change_player
+      expect(new_game.player).to eq 2
+    end
+    it 'changes players' do 
+      new_game = TicTacToe.new
+      new_game.player = 2
+      new_game.change_player
+      expect(new_game.player).to eq 1
+    end
+  end
+
+  context '#validate_input' do 
+    new_game = TicTacToe.new
+    it 'returns true for 1' do 
+      expect(new_game.validate_input('1')).to be_truthy
+    end
+    it 'returns false for foo' do 
+      expect(new_game.validate_input('foo')).to be_falsey
+    end
+    it 'returns false for 87' do 
+      expect(new_game.validate_input('87')).to be_falsey
+    end
+    it 'returns false for 3.5' do 
+      expect(new_game.validate_input('3.5')).to be_falsey
+    end
+  end
+
   context '#display_tictactoe' do
     it 'prints to terminal' do
       expect { TicTacToe.new.display_tictactoe }.to output.to_stdout

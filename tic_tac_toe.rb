@@ -27,14 +27,17 @@ class TicTacToe
   # if no carry on and switch players
   
   def place_mark_on_board(user_choice)
-    if @player == 1
-      mark = 'X'
-      @player = 2
-    else
-      mark = 'O'
-      @player = 1
-    end
+    mark = @player == 1 ? 'X' : 'O'
     @board[user_choice - 1] = mark
+    change_player
+  end
+
+  def change_player
+    @player = @player == 1 ? 2 : 1
+  end
+
+  def validate_input(input)
+    input.to_i > 0 && input.to_i <= 9 && input.size == 1
   end
 
   def check_if_X_won
