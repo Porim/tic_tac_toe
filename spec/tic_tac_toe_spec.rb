@@ -38,10 +38,15 @@ describe TicTacToe do
   end
 
   context '#anybody_won?' do
-    it '' do
+    it 'returns true for given board' do
       new_game = TicTacToe.new
       new_game.board = [0, 1 , 2, 'X', 'X', 'X', 6, 7, 8]
       expect(new_game.anybody_won?).to eq true
+    end
+    it 'returns false for given board' do
+      new_game = TicTacToe.new
+      new_game.board = [0, 1 , 2, 'X', 'X', 5, 6, 7, 8]
+      expect(new_game.anybody_won?).to eq false
     end
   end
 

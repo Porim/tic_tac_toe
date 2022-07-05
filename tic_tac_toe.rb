@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-require 'sinatra'
-enable :sessions
+# require 'sinatra'
+# enable :sessions
 
 
 class TicTacToe
   attr_accessor :board
+  attr_accessor :player
 
   def initialize
     @board = (1..9).to_a
@@ -48,6 +49,8 @@ class TicTacToe
       check = combo.map {|x| @board[x]}
       return true if check.uniq.size == 1
     }
+
+    false
     
     # win_combinations.each {|win_combination| marks.include?(win_combinations)}
   end
@@ -66,22 +69,24 @@ class TicTacToe
   end
 end
 
-get '/' do
-  session[:board] = {}
-  erb :game, locals: {:board => session[:board]}
-end
-
-post '/' do 
-  
-
-
-
-# def game
-#   TicTacToe.new.display_tictactoe
-
-#   print 'Choose where you want to place your mark with numbers 1-9: '
-#   user_choice = gets.chomp
-#   user_choice.to_i
+# get '/' do
+#   session[:board] = {}
+#   erb :game, locals: {:board => session[:board]}
 # end
+
+# post '/' do 
+#   session[:board] = params['board']
+#   redirect '/game'
+# end
+
+# get '/game' do 
+#   erb :game, locals: {:board => session[:board]}
+# end
+
+# post '/game' do 
+#   session[:board] = params['board']
+# end
+
+
 
 
