@@ -1,8 +1,3 @@
-# frozen_string_literal: true
-
-# require 'sinatra'
-# enable :sessions
-
 
 class TicTacToe
   attr_accessor :board
@@ -75,23 +70,6 @@ class TicTacToe
   end
 end
 
-# get '/' do
-#   session[:board] = {}
-#   erb :game, locals: {:board => session[:board]}
-# end
-
-# post '/' do 
-#   session[:board] = params['board']
-#   redirect '/game'
-# end
-
-# get '/game' do 
-#   erb :game, locals: {:board => session[:board]}
-# end
-
-# post '/game' do 
-#   session[:board] = params['board']
-# end
 
 
 
